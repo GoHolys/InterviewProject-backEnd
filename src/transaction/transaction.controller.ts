@@ -13,7 +13,7 @@ export class TransactionController {
   async findAll() {
     return await this.transacationService.findAll();
   }
-  @Get('findManyId')
+  @Get('findManyIdToday')
   async findManyIdToday(@Body('id') id: number) {
     return await this.transacationService.findManyIdToday(id);
   }
