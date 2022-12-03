@@ -26,8 +26,4 @@ export class AccountController {
     const { id, amount } = dto;
     return this.accountService.deposit(id, amount);
   }
-
-  block() {
-    return 'I am blocked';
-  }
 }
