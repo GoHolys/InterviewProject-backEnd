@@ -16,6 +16,11 @@ export class AccountController {
     return this.accountService.getBalance(id);
   }
 
+  @Get('getSingleTransactions')
+  getSingleTransactions(@Body('id') id: number) {
+    return this.accountService.getSingleTransactions(id);
+  }
+
   @Patch('withdraw')
   withdraw(@Body() dto: withdrawDto) {
     const { id, amount } = dto;

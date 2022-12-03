@@ -44,6 +44,25 @@ export class AccountService {
     }
   }
 
+  async getSingleTransactions(id: number) {
+    try {
+      const account = await this.prisma.account.findUnique({
+        where: {
+          id,
+        },
+        include: {
+          transactions: true,
+        },
+      });
+      if (!account) {
+        throw new ForbiddenException('account does not exist');
+      }
+      return account.transactions;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   async findAccount(id: number) {
     try {
       const account = await this.prisma.account.findUnique({
