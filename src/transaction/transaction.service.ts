@@ -28,11 +28,11 @@ export class TransactionService {
       throw error;
     }
   }
-  async findManyIdToday(id: number) {
+  async findManyIdToday(accountId: number) {
     try {
       const transactions = this.prisma.transaction.findMany({
         where: {
-          accountId: id,
+          accountId: accountId,
           transactiontype: TRANSACTION_TYPES.withdraw,
           transactionDate:{
             lte: new Date(),

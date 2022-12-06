@@ -14,7 +14,7 @@ export class TransactionController {
     return await this.transacationService.findAll();
   }
   @Get('findManyIdToday')
-  async findManyIdToday(@Body('id') id: number) {
-    return await this.transacationService.findManyIdToday(id);
+  async findManyIdToday(@Body('accountId') accountId: number) {
+    return await this.transacationService.findManyIdToday(accountId);
   }
 }
